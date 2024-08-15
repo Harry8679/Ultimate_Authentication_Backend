@@ -3,14 +3,12 @@ const app = express();
 const dotenv = require('dotenv');
 dotenv.config();
 
+// Import Routes
+const userRoutes = require('./routes/user.route');
+
 const port = process.env.PORT || 6100;
 
-app.get('/', (req, res) => {
-    res.send('Server is running');
-});
-
-app.get('/api/v1/users/register', (req, res) => {
-    res.send('Hello from NodeJS');
-});
+// Middlewares
+app.use('/api/v1/users', userRoutes);
 
 app.listen(port, () => console.log(`Server is running on the port ${port}`));
