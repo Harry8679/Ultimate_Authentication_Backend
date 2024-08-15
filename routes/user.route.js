@@ -1,12 +1,9 @@
 const express = require('express');
+const { home, register } = require('../controllers/user.controller');
 const userRoutes = express.Router();
 
-userRoutes.get('/', (req, res) => {
-    res.send('Server is running');
-});
+userRoutes.get('/', home);
 
-userRoutes.get('/register', (req, res) => {
-    res.send('Hello from NodeJS');
-});
+userRoutes.get('/register', register);
 
 module.exports = userRoutes;
