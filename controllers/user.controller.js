@@ -5,7 +5,8 @@ const home = asyncHandler(async(req, res) => {
 });
 
 const register = asyncHandler(async (req, res) => {
-    res.send('Hello from NodeJS');
+    console.log(req.body);
+    res.send('Registration');
 });
 
 module.exports = { home, register };
